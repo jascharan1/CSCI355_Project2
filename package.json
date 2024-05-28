@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/app.js -e js,hbs",
-    "start": "node src/index.js"
+    "start": "node dist/app.js",
+    "build": "babel src -d dist && cp -R public dist/public && cp -R templates dist/templates"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +21,8 @@
     "mongoose": "^6.12.8"
   },
   "devDependencies": {
-    "nodemon": "^3.1.0"
+    "nodemon": "^3.1.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0"
   }
 }
